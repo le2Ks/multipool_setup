@@ -13,10 +13,10 @@ fi
 
 # Clone the MultiPool repository if it doesn't exist.
 if [ ! -d $HOME/multipool/yiimp_upgrade ]; then
-	echo Downloading MultiPool YiiMP Stratum Upgrade Installer ${TAG}. . .
+	echo Downloading MultiPool YiiMP bunbunbunbunbunny Stratum Upgrade Installer ${TAG}. . .
 	git clone \
 		-b ${TAG} --depth 1 \
-		https://github.com/cryptopool-builders/multipool_yiimp_upgrade \
+		https://github.com/bunbunbunbunbunny/multipool_yiimp_upgrade \
 		$HOME/multipool/yiimp_upgrade \
 		< /dev/null 2> /dev/null
 
