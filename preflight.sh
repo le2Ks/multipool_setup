@@ -1,10 +1,10 @@
 #####################################################
 # Source https://mailinabox.email/ https://github.com/mail-in-a-box/mailinabox
-# Updated by cryptopool.builders for crypto use...
+# Updated by bunbunbunbunbunny for crypto use...
 #####################################################
 
 if [ "`lsb_release -d | sed 's/.*:\s*//' | sed 's/16\.04\.[0-9]/16.04/' `" != "Ubuntu 16.04 LTS" ]; then
-echo "Ultimate Crypto-Server Setup Installer only supports being installed on Ubuntu 16.04, sorry. You are running:"
+echo "Ultimate bunbunbunbunbunny Setup Installer only supports being installed on Ubuntu 16.04, sorry. You are running:"
 echo
 lsb_release -d | sed 's/.*:\s*//'
 echo
@@ -23,7 +23,7 @@ exit
 fi
 fi
 if [ $TOTAL_PHYSICAL_MEM -lt 2000000 ]; then
-echo "WARNING: Your Crypto-Pool Server has less than 4 GB of memory."
+echo "WARNING: Your bunbunbunbunbunny Server has less than 4 GB of memory."
 echo " It might run unreliably when under heavy load."
 fi
 
@@ -42,7 +42,7 @@ if
 [ $TOTAL_PHYSICAL_MEM -lt 19000000 ] &&
 [ $AVAILABLE_DISK_SPACE -gt 5242880 ]
 then
-echo "Adding a swap file to the system..."
+echo "Adding a swap file to the system bunbunbunbunbunny..."
 
 # Allocate and activate the swap file. Allocate in 1KB chuncks
 # doing it in one go, could fail on low memory systems
@@ -64,7 +64,7 @@ fi
 ARCHITECTURE=$(uname -m)
 if [ "$ARCHITECTURE" != "x86_64" ]; then
 if [ -z "$ARM" ]; then
-echo "Ultimate Crypto-Server Setup Installer only supports x86_64 and will not work on any other architecture, like ARM or 32 bit OS."
+echo "bunbunbunbunbunny Setup Installer only supports x86_64 and will not work on any other architecture, like ARM or 32 bit OS."
 echo "Your architecture is $ARCHITECTURE"
 exit
 fi
