@@ -6,10 +6,10 @@
 source /etc/functions.sh
 cd ~/multipool/install
 clear
-message_box "Ultimate Crypto-Server Setup Installer" \
-"Naughty, naughty! You are trying to install this as the root user!
-\n\nRunning any application as root is a serious security risk.
-\n\nTherefore we make you create a user account :)"
+message_box "Ultimate Crypto-Server bunbunbunbunbunny Setup Installer" \
+" Patate ! T'as oublie de creer un user !
+\n\nGneheh :).
+\n\nFaut te creer un compte! "
 
 if [ -z "${yiimpadmin}" ]; then
 DEFAULT_yiimpadmin=yiimpadmin
