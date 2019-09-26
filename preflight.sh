@@ -17,13 +17,13 @@ if [ $TOTAL_PHYSICAL_MEM -lt 1000000 ]; then
 if [ ! -d /vagrant ]; then
 TOTAL_PHYSICAL_MEM=$(expr \( \( $TOTAL_PHYSICAL_MEM \* 1024 \) / 1000 \) / 1000)
 echo "Your Crypto-Pool Server needs more memory (RAM) to function properly."
-echo "Please provision a machine with at least 1 GB, 6 GB recommended."
+echo "Please provision a machine with at least 1 GB, 6 GB recommended. (suck it lol)"
 echo "This machine has $TOTAL_PHYSICAL_MEM MB memory."
 exit
 fi
 fi
-if [ $TOTAL_PHYSICAL_MEM -lt 2000000 ]; then
-echo "WARNING: Your bunbunbunbunbunny Server has less than 4 GB of memory."
+if [ $TOTAL_PHYSICAL_MEM -lt 1000000 ]; then
+echo "WARNING: Your bunbunbunbunbunny Server has less than 1 GB of memory."
 echo " It might run unreliably when under heavy load."
 fi
 
