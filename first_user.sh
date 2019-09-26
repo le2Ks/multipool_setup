@@ -7,9 +7,9 @@ source /etc/functions.sh
 cd ~/multipool/install
 clear
 message_box "Ultimate Crypto-Server bunbunbunbunbunny Setup Installer" \
-" Patate ! T'as oublie de creer un user !
-\n\nGneheh :).
-\n\nFaut te creer un compte! "
+" Hey dumb potatoes !
+\n\ :P
+\n\n Needs to create an account first ! "
 
 if [ -z "${yiimpadmin}" ]; then
 DEFAULT_yiimpadmin=yiimpadmin
