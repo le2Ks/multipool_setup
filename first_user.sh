@@ -69,7 +69,9 @@ echo '# yiimp
 ' | sudo -E tee /etc/sudoers.d/${yiimpadmin} >/dev/null 2>&1
 
 echo '
-cd ~/multipool/install
+cd ~/multipool/
+chmod 775 -R install
+cd ~/install/
 bash start.sh
 ' | sudo -E tee /usr/bin/multipool >/dev/null 2>&1
 sudo chmod +x /usr/bin/multipool
@@ -78,6 +80,7 @@ sudo cp -r ~/multipool /home/${yiimpadmin}/
 cd ~
 sudo rm -r multipool
 sudo setfacl -m u:${yiimpadmin}:rwx /home/${yiimpadmin}/multipool
+
 
 clear
 echo "New User is installed..."
