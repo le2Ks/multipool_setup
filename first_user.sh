@@ -6,10 +6,10 @@
 source /etc/functions.sh
 cd ~/multipool/install
 clear
-message_box "Ultimate Crypto-Server bunbunbunbunbunny Setup Installer" \
-" Hey dumb potatoes !
-\n\ :P
-\n\n Needs to create an account first ! "
+message_box "Ultimate Crypto-Server Setup Installer" \
+"Naughty, naughty! You are trying to install this as the root user!
+\n\nRunning any application as root is a serious security risk.
+\n\nTherefore we make you create a user account :)"
 
 if [ -z "${yiimpadmin}" ]; then
 DEFAULT_yiimpadmin=yiimpadmin
@@ -69,16 +69,15 @@ echo '# yiimp
 ' | sudo -E tee /etc/sudoers.d/${yiimpadmin} >/dev/null 2>&1
 
 echo '
-cd ~/multipool/install/
+cd ~/multipool/install
 bash start.sh
 ' | sudo -E tee /usr/bin/multipool >/dev/null 2>&1
 sudo chmod +x /usr/bin/multipool
 
-sudo cp -r multipool/ /home/${yiimpadmin}/
-chmod 775 -R /home/${yiimpadmin}
+sudo cp -r ~/multipool /home/${yiimpadmin}/
 cd ~
+sudo rm -r multipool
 sudo setfacl -m u:${yiimpadmin}:rwx /home/${yiimpadmin}/multipool
-
 
 clear
 echo "New User is installed..."
