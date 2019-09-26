@@ -70,7 +70,6 @@ echo '# yiimp
 
 echo '
 cd ~/multipool/
-chmod 775 -R install
 cd ~/install/
 bash start.sh
 ' | sudo -E tee /usr/bin/multipool >/dev/null 2>&1
