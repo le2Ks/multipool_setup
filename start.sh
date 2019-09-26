@@ -16,7 +16,7 @@ sudo cp -r functions.sh /etc/
 # Check system setup: Are we running as root on Ubuntu 16.04 on a
 # machine with enough memory?
 # If not, this shows an error and exits.
-
+source preflight.sh
 
 # Ensure Python reads/writes files in UTF-8. If the machine
 # triggers some other locale in Python, like ASCII encoding,
