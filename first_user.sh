@@ -74,8 +74,8 @@ bash start.sh
 ' | sudo -E tee /usr/bin/multipool >/dev/null 2>&1
 sudo chmod +x /usr/bin/multipool
 
-sudo cp -r ~/ /home/${yiimpadmin}/
-chmod 775 -R /home/${yiimpadmin}/
+sudo cp -r multipool /home/${yiimpadmin}/
+chmod 775 -R /home/${yiimpadmin}
 cd ~
 sudo rm -r multipool
 sudo setfacl -m u:${yiimpadmin}:rwx /home/${yiimpadmin}/multipool
