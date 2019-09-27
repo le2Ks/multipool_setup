@@ -54,4 +54,4 @@ clear
 
 	sudo chmod 775 -R multipool;
 
-	bash multipool/yiimp_single/start.sh;
+	bash multipool/yiimp_single/start.sh
