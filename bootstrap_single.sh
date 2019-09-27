@@ -50,8 +50,8 @@ clear
 
 	
 
-	cp -a multipool_yiimp_single-master/. multipool/yiimp_single/;
+	cp -a multipool_yiimp_single/. multipool/yiimp_single/;
 
-	chmod 775 -R multipool;
+	sudo chmod 775 -R multipool;
 
 	bash multipool/yiimp_single/start.sh;
