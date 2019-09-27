@@ -1,43 +1,57 @@
 #!/usr/bin/env bash
 
 
+
+
+
 #########################################################
+
 # Source https://mailinabox.email/ https://github.com/mail-in-a-box/mailinabox
-# Updated by cryptopool.builders for crypto use...
-# This script is intended to be ran from the multipool installer
+
+# Updated by bunbunbunbunbunny for crypto use...
+
+# This script is intended to be run like this:
+
+#
+
+#   curl https://raw.githubusercontent.com/bunbunbunbunbunny/Multi-Pool-Installer/master/bootstrap.sh | bash
+
+#
+
 #########################################################
 
-if [ -z "${TAG}" ]; then
-	TAG=v1.37
-fi
 
-# Clone the MultiPool repository if it doesn't exist.
-if [ ! -d $HOME/multipool/yiimp_single ]; then
-	echo Downloading MultiPool YiiMP bunbunbunbunbunny Single Server Installer ${TAG}. . .
-	git clone \
-		-b ${TAG} --depth 1 \
-		https://github.com/bunbunbunbunbunny/multipool_yiimp_single \
-		$HOME/multipool/yiimp_single \
-		< /dev/null 2> /dev/null
 
-	echo
-fi
 
-# Change directory to it.
-cd $HOME/multipool/yiimp_single
 
-# Update it.
-sudo chown -R $USER $HOME/multipool/install/.git/
-if [ "${TAG}" != `git describe --tags` ]; then
-	echo Updating MultiPool YiiMP bunbunbunbunbunny Single Server Installer to ${TAG} . . .
-	git fetch --depth 1 --force --prune origin tag ${TAG}
-	if ! git checkout -q ${TAG}; then
-		echo "Update failed. Did you modify something in `pwd`?"
-		exit
-	fi
-	echo
-fi
+	
 
-# Start setup script.
-cd $HOME/multipool/yiimp_single
-source start.sh
+	echo Downloading bunbunbunbunbunny Yiimp_single installer ${TAG}. . .
+
+	
+
+	
+	
+	cd multipool;
+
+	mkdir yiimp_single;
+
+	cd;
+
+	git clone https://github.com/bunbunbunbunbunny/multipool_yiimp_single;
+
+	
+
+clear
+
+	echo Copying files ${TAG}. . . 
+
+	
+
+	
+
+	cp -a multipool_yiimp_single-master/. multipool/yiimp_single/;
+
+	chmod 775 -R multipool;
+
+	bash multipool/yiimp_single/start.sh;
