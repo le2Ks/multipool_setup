@@ -1,6 +1,6 @@
 #####################################################
 # Source https://mailinabox.email/ https://github.com/mail-in-a-box/mailinabox
-# Updated by bunbunbunbunbunny for crypto use...
+# Updated by cryptopool.builders for crypto use...
 #####################################################
 
 source /etc/functions.sh
@@ -13,8 +13,8 @@ sudo apt-get -q -q update
 apt_get_quiet install dialog python3 python3-pip acl nano apt-transport-https || exit 1
 fi
 
-message_box "bunbunbunbunbunny Crypto-Server Setup Installer" \
-"Hello and thanks for using the bunbunbunbunbunny Crypto-Server Setup Installer  Updated by bunbunbunbunbunny!
+message_box "Ultimate Crypto-Server Setup Installer" \
+"Hello and thanks for using the Ultimate Crypto-Server Setup Installer!
 \n\nInstallation for the most part is fully automated. In most cases any user responses that are needed are asked prior to the installation.
 \n\nNOTE: You should only install this on a brand new Ubuntu 16.04 installation."
 

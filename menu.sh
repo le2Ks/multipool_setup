@@ -7,7 +7,7 @@ source /etc/functions.sh
 
 RESULT=$(dialog --stdout --nocancel --default-item 1 --title "Ultimate Crypto-Server Setup Installer v1.68" --menu "Choose one" -1 60 16 \
 ' ' "- YiiMP Server Install -" \
-1 "YiiMP BunbunbunBunny Single Server" \
+1 "YiiMP Single Server" \
 2 "YiiMP Multi Server" \
 ' ' "- YiiMP Upgrade -" \
 3 "YiiMP Stratum Upgrade" \

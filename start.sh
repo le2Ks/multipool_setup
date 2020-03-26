@@ -4,7 +4,7 @@
 #####################################################
 # This is the entry point for configuring the system.
 # Source https://mailinabox.email/ https://github.com/mail-in-a-box/mailinabox
-# Updated by bunbunbunbunbunny for crypto use...
+# Updated by cryptopool.builders for crypto use...
 #####################################################
 
 cd $HOME/multipool/install
@@ -49,14 +49,14 @@ FIRST_TIME_SETUP=1
 fi
 
 #check for user
-echo -e " Installing bunbunbunbunbunny needed packages for setup to continue...$COL_RESET"
+echo -e " Installing needed packages for setup to continue...$COL_RESET"
 
 sudo apt-get -q -q update
 apt_get_quiet install dialog python3 python3-pip acl nano git apt-transport-https || exit 1
 
 # Are we running as root?
 if [[ $EUID -ne 0 ]]; then
-	echo -e "$RED This script must be run as root. bunbunbunbunbunny Please re-run like this: $COL_RESET"
+	echo -e "$RED This script must be run as root. Please re-run like this: $COL_RESET"
 	echo
 	echo "bash $0"
 	echo
@@ -95,7 +95,13 @@ restart_service fail2ban
 echo
 echo "-----------------------------------------------"
 echo
-echo Thank you for using the Ultimate bunbunbunbunbunny Setup Installer!
+echo Thank you for using the Ultimate Crypto-Server Setup Installer!
 echo
 echo To run this installer anytime simply type, multipool!
+echo Donations for continued support of this script are welcomed at:
+echo
+echo BTC 3DvcaPT3Kio8Hgyw4ZA9y1feNnKZjH7Y21
+echo BCH qrf2fhk2pfka5k649826z4683tuqehaq2sc65nfz3e
+echo ETH 0x6A047e5410f433FDBF32D7fb118B6246E3b7C136
+echo LTC MLS5pfgb7QMqBm3pmBvuJ7eRCRgwLV25Nz
 cd ~

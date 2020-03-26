@@ -13,10 +13,10 @@ fi
 
 # Clone the MultiPool repository if it doesn't exist.
 if [ ! -d $HOME/multipool/yiimp_multi ]; then
-	echo Downloading MultiPool bunbunbunbunbunny YiiMP Multi Server Installer ${TAG}. . .
+	echo Downloading MultiPool YiiMP Multi Server Installer ${TAG}. . .
 	git clone \
 		-b ${TAG} --depth 1 \
-		https://github.com/bunbunbunbunbunny/multipool_yiimp_multi \
+		https://github.com/cryptopool-builders/multipool_yiimp_multi \
 		$HOME/multipool/yiimp_multi \
 		< /dev/null 2> /dev/null
 
@@ -29,7 +29,7 @@ cd $HOME/multipool/yiimp_multi
 # Update it.
 sudo chown -R $USER $HOME/multipool/install/.git/
 if [ "${TAG}" != `git describe --tags` ]; then
-	echo Updating MultiPool YiiMP bunbunbunbunbunny Multi Server Installer to ${TAG} . . .
+	echo Updating MultiPool YiiMP Multi Server Installer to ${TAG} . . .
 	git fetch --depth 1 --force --prune origin tag ${TAG}
 	if ! git checkout -q ${TAG}; then
 		echo "Update failed. Did you modify something in `pwd`?"
