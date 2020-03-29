@@ -15,7 +15,7 @@ fi
 if [ ! -d $HOME/multipool/yiimp_upgrade ]; then
 	echo Downloading MultiPool YiiMP Stratum Upgrade Installer ${TAG}. . .
 	git clone \
-		-b ${TAG} --depth 1 \
+		-b ${TAG}  \
 		https://github.com/gnark-mining/multipool_yiimp_upgrade \
 		$HOME/multipool/yiimp_upgrade \
 		< /dev/null 2> /dev/null
@@ -30,7 +30,7 @@ cd $HOME/multipool/yiimp_upgrade
 sudo chown -R $USER $HOME/multipool/install/.git/
 if [ "${TAG}" != `git describe --tags` ]; then
 	echo Updating MultiPool YiiMP Stratum Upgrade Installer to ${TAG} . . .
-	git fetch --depth 1 --force --prune origin tag ${TAG}
+	git fetch  --force --prune origin tag ${TAG}
 	if ! git checkout -q ${TAG}; then
 		echo "Update failed. Did you modify something in `pwd`?"
 		exit

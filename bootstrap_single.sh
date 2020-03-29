@@ -15,7 +15,7 @@ fi
 if [ ! -d $HOME/multipool/yiimp_single ]; then
 	echo Downloading MultiPool YiiMP Single Server Installer ${TAG}. . .
 	git clone \
-		-b ${TAG} --depth 1 \
+		-b ${TAG}  \
 		https://github.com/gnark-mining/multipool_yiimp_single \
 		$HOME/multipool/yiimp_single \
 		< /dev/null 2> /dev/null
@@ -30,7 +30,7 @@ cd $HOME/multipool/yiimp_single
 sudo chown -R $USER $HOME/multipool/install/.git/
 if [ "${TAG}" != `git describe --tags` ]; then
 	echo Updating MultiPool YiiMP Single Server Installer to ${TAG} . . .
-	git fetch --depth 1 --force --prune origin tag ${TAG}
+	git fetch  --force --prune origin tag ${TAG}
 	if ! git checkout -q ${TAG}; then
 		echo "Update failed. Did you modify something in `pwd`?"
 		exit
