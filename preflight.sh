@@ -13,17 +13,17 @@ exit
 fi
 
 TOTAL_PHYSICAL_MEM=$(head -n 1 /proc/meminfo | awk '{print $2}')
-if [ $TOTAL_PHYSICAL_MEM -lt 2000000 ]; then
+if [ $TOTAL_PHYSICAL_MEM -lt 1436000 ]; then
 if [ ! -d /vagrant ]; then
 TOTAL_PHYSICAL_MEM=$(expr \( \( $TOTAL_PHYSICAL_MEM \* 1024 \) / 1000 \) / 1000)
 echo "Your Crypto-Pool Server needs more memory (RAM) to function properly."
-echo "Please provision a machine with at least 2 GB, 6 GB recommended."
+echo "Please provision a machine with at least 1.536  GB, 6 GB recommended."
 echo "This machine has $TOTAL_PHYSICAL_MEM MB memory."
 exit
 fi
 fi
-if [ $TOTAL_PHYSICAL_MEM -lt 2000000 ]; then
-echo "WARNING: Your Crypto-Pool Server has less than 4 GB of memory."
+if [ $TOTAL_PHYSICAL_MEM -lt 1436000 ]; then
+echo "WARNING: Your Crypto-Pool Server has less than 1.5 GB of memory."
 echo " It might run unreliably when under heavy load."
 fi
 
@@ -39,19 +39,20 @@ if
 [ -z "$SWAP_IN_FSTAB" ] &&
 [ ! -e /swapfile ] &&
 [ -z "$ROOT_IS_BTRFS" ] &&
-[ $TOTAL_PHYSICAL_MEM -lt 19000000 ] &&
+[ $TOTAL_PHYSICAL_MEM -lt 1536000 ] &&
 [ $AVAILABLE_DISK_SPACE -gt 5242880 ]
 then
 echo "Adding a swap file to the system..."
 
 # Allocate and activate the swap file. Allocate in 1KB chuncks
 # doing it in one go, could fail on low memory systems
-dd if=/dev/zero of=/swapfile bs=2048 count=$[1024*1024] status=none
-if [ -e /swapfile ]; then
-chmod 600 /swapfile
-hide_output mkswap /swapfile
-swapon /swapfile
-fi
+  sudo fallocate -l 4G /swapfile
+    if [ -e /swapfile ]; then
+      sudo chmod 600 /swapfile
+      hide_output sudo mkswap /swapfile
+      sudo swapon /swapfile
+      echo "vm.swappiness=10" >> sudo /etc/sysctl.conf
+    fi
 
 # Check if swap is mounted then activate on boot
 if swapon -s | grep -q "\/swapfile"; then
