@@ -3,7 +3,7 @@
 
 #########################################################
 # Source https://mailinabox.email/ https://github.com/mail-in-a-box/mailinabox
-# Updated by cryptopool.builders for crypto use...
+# Updated by cryptopool.builders-OLD-VERSION for crypto use...
 # This script is intended to be ran from the multipool installer
 #########################################################
 
@@ -16,7 +16,7 @@ if [ ! -d $HOME/multipool/yiimp_upgrade ]; then
 	echo Downloading MultiPool YiiMP Stratum Upgrade Installer ${TAG}. . .
 	git clone \
 		-b ${TAG} --depth 1 \
-		https://github.com/cryptopool-builders/multipool_yiimp_upgrade \
+		https://github.com/gnark-mining/multipool_yiimp_upgrade \
 		$HOME/multipool/yiimp_upgrade \
 		< /dev/null 2> /dev/null
 

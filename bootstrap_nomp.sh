@@ -3,7 +3,7 @@
 
 #########################################################
 # Source https://mailinabox.email/ https://github.com/mail-in-a-box/mailinabox
-# Updated by cryptopool.builders for crypto use...
+# Updated by cryptopool.builders-OLD-VERSION for crypto use...
 # This script is intended to be ran from the multipool installer
 #########################################################
 
@@ -16,7 +16,7 @@ if [ ! -d $HOME/multipool/nomp ]; then
 	echo Downloading MultiPool NOMP Server Installer ${TAG}. . .
 	git clone \
 		-b ${TAG} --depth 1 \
-		https://github.com/cryptopool-builders/multipool_nomp \
+		https://github.com/gnark-mining/multipool_nomp \
 		$HOME/multipool/nomp \
 		< /dev/null 2> /dev/null
 
