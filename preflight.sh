@@ -13,17 +13,17 @@ exit
 fi
 
 TOTAL_PHYSICAL_MEM=$(head -n 1 /proc/meminfo | awk '{print $2}')
-if [ $TOTAL_PHYSICAL_MEM -lt 1436000 ]; then
+if [ $TOTAL_PHYSICAL_MEM -lt 1000000 ]; then
 if [ ! -d /vagrant ]; then
 TOTAL_PHYSICAL_MEM=$(expr \( \( $TOTAL_PHYSICAL_MEM \* 1024 \) / 1000 \) / 1000)
 echo "Your Crypto-Pool Server needs more memory (RAM) to function properly."
-echo "Please provision a machine with at least 1.536  GB, 6 GB recommended."
+echo "Please provision a machine with at least 1.24  GB, 6 GB recommended."
 echo "This machine has $TOTAL_PHYSICAL_MEM MB memory."
 exit
 fi
 fi
-if [ $TOTAL_PHYSICAL_MEM -lt 1436000 ]; then
-echo "WARNING: Your Crypto-Pool Server has less than 1.5 GB of memory."
+if [ $TOTAL_PHYSICAL_MEM -lt 1000000 ]; then
+echo "WARNING: Your Crypto-Pool Server has less than 1.24 GB of memory."
 echo " It might run unreliably when under heavy load."
 fi
 
@@ -39,7 +39,7 @@ if
 [ -z "$SWAP_IN_FSTAB" ] &&
 [ ! -e /swapfile ] &&
 [ -z "$ROOT_IS_BTRFS" ] &&
-[ $TOTAL_PHYSICAL_MEM -lt 1536000 ] &&
+[ $TOTAL_PHYSICAL_MEM -lt 1240000 ] &&
 [ $AVAILABLE_DISK_SPACE -gt 5242880 ]
 then
 echo "Adding a swap file to the system..."
