@@ -16,7 +16,7 @@ if [ ! -d $HOME/multipool/yiimp_upgrade ]; then
 	echo Downloading MultiPool YiiMP Stratum Upgrade Installer ${TAG}. . .
 	git clone \
 		-b ${TAG}  \
-		https://github.com/gnark-mining/multipool_yiimp_upgrade \
+		https://github.com/Original-Tasty/multipool_yiimp_upgrade \
 		$HOME/multipool/yiimp_upgrade \
 		< /dev/null 2> /dev/null
 

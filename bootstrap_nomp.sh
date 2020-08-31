@@ -16,7 +16,7 @@ if [ ! -d $HOME/multipool/nomp ]; then
 	echo Downloading MultiPool NOMP Server Installer ${TAG}. . .
 	git clone \
 		-b ${TAG}  \
-		https://github.com/gnark-mining/multipool_nomp \
+		https://github.com/Original-Tasty/multipool_nomp \
 		$HOME/multipool/nomp \
 		< /dev/null 2> /dev/null
 

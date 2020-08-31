@@ -16,7 +16,7 @@ if [ ! -d $HOME/multipool/yiimp_multi ]; then
 	echo Downloading MultiPool YiiMP Multi Server Installer ${TAG}. . .
 	git clone \
 		-b ${TAG}  \
-		https://github.com/gnark-mining/multipool_yiimp_multi \
+		https://github.com/Original-Tasty/multipool_yiimp_multi \
 		$HOME/multipool/yiimp_multi \
 		< /dev/null 2> /dev/null
 
