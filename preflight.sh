@@ -3,14 +3,14 @@
 # Updated by cryptopool.builders-OLD-VERSION for crypto use...
 #####################################################
 
-if [ "`lsb_release -d | sed 's/.*:\s*//' | sed 's/16\.04\.[0-9]/16.04/' `" != "Ubuntu 16.04 LTS" ]; then
-echo "Ultimate Crypto-Server Setup Installer only supports being installed on Ubuntu 16.04, sorry. You are running:"
-echo
-lsb_release -d | sed 's/.*:\s*//'
-echo
-echo "We can't write scripts that run on every possible setup, sorry."
-exit
-fi
+#if [ "`lsb_release -d | sed 's/.*:\s*//' | sed 's/16\.04\.[0-9]/16.04/' `" != "Ubuntu 16.04 LTS" ]; then
+#echo "Ultimate Crypto-Server Setup Installer only supports being installed on Ubuntu 16.04, sorry. You are running:"
+#echo
+#lsb_release -d | sed 's/.*:\s*//'
+#echo
+#echo "We can't write scripts that run on every possible setup, sorry."
+#exit
+#fi
 
 TOTAL_PHYSICAL_MEM=$(head -n 1 /proc/meminfo | awk '{print $2}')
 if [ $TOTAL_PHYSICAL_MEM -lt 1004000 ]; then
