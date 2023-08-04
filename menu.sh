@@ -19,8 +19,9 @@ RESULT=$(dialog --stdout --nocancel --default-item 1 --title "Ultimate Crypto-Se
 ' '  "- CryptoNote Server Install -" \
 6 "CryptoNote-Nodejs Server - Coming Soon" \
 ' ' "- Faucet Server Install -" \
-7 "Faucet Script - Coming Soon" \
-' ' "- Daemon Wallet Builder -" \
+7 "YiiMP Single Kudaraidee Server 2204" \
+# 7 "Faucet Script - Coming Soon" \
+# ' ' "- Daemon Wallet Builder -" \
 8 "Daemonbuilder" \
 9 Exit)
 if [ $RESULT = ]
@@ -81,8 +82,15 @@ if [ $RESULT = 7 ]
 then
 clear;
 cd $HOME/multipool/install
-exit 0;
+source bootstrap_single_kudaraidee_2204.sh;
 fi
+
+# if [ $RESULT = 7 ]
+# then
+# clear;
+# cd $HOME/multipool/install
+# exit 0;
+# fi
 
 if [ $RESULT = 8 ]
 then
