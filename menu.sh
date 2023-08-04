@@ -7,7 +7,8 @@ source /etc/functions.sh
 
 RESULT=$(dialog --stdout --nocancel --default-item 1 --title "Ultimate Crypto-Server Setup Installer v1.69" --menu "Choose one" -1 60 16 \
 ' ' "- YiiMP Server Install -" \
-1 "YiiMP Single Server" \
+0 "YiiMP Single Kudaraidee Server" \
+1 "YiiMP Single CryptoBuilders Server" \
 2 "YiiMP Multi Server" \
 ' ' "- YiiMP Upgrade -" \
 3 "YiiMP Stratum Upgrade" \
@@ -27,6 +28,12 @@ then
 bash $(basename $0) && exit;
 fi
 
+if [ $RESULT = 0 ]
+then
+clear;
+cd $HOME/multipool/install
+source bootstrap_single_kudaraidee.sh;
+fi
 
 if [ $RESULT = 1 ]
 then
