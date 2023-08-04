@@ -13,7 +13,7 @@ ESC_SEQ="\x1b["
  CYAN=$ESC_SEQ"36;01m"
 
 function hide_output {
-		OUTPUT=$(tempfile)
+		OUTPUT=$(mktemp)
 		$@ &> $OUTPUT
 		E=$?
 		if [ $E != 0 ]; then
